@@ -1,0 +1,7 @@
+[data-bs-theme="waragreen"] {
+    --bs-body-color: var(--bs-white);
+    --bs-body-color-rgb: #{to-rgb($white)};
+    --bs-body-bg: #2F3A24;
+    --bs-body-bg-rgb: #2F3A24;
+    --bs-tertiary-bg: #2F3A24;
+}

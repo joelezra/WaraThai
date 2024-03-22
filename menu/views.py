@@ -3,4 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def menu(request):
-    return HttpResponse("This would be the menu page")
+    return render(
+    request,
+    '/templates/menu.html',
+  )
