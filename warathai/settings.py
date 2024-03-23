@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     '.herokuapp.com',
 ]
 
+SITE_ID = 1
 
 # Application definition
 
@@ -76,7 +77,7 @@ ROOT_URLCONF = 'warathai.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

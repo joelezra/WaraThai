@@ -11,7 +11,7 @@ class UserProfile(models.Model):
     lastname = models.CharField(max_length=50)
     username = models.CharField(max_length=50)
     profile_image = CloudinaryField('image', default='placeholder')
-    booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
+    booking = models.ForeignKey(Booking, on_delete=models.CASCADE, null=True)
     
     
     def __str__(self):

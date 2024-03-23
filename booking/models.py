@@ -35,26 +35,22 @@ class TimeSlot(models.Model):
     booking_time = models.TimeField(null=False, blank=False, choices=TIME_SLOTS)
     
 
-class Date(models.Model):
-    date = models.DateField(null=False, blank=False, validators=[MinValueValidator(limit_value=date.today())],)
-
-
 class Table(models.Model):
     TABLE = (
-        (1, "Table 1"),
-        (2, "Table 2"),
-        (3, "Table 3"),
-        (4, "Table 4"),
-        (5, "Table 5"),
-        (6, "Table 6"),
-        (7, "Table 7"),
-        (8, "Table 8"),
-        (9, "Table 9"),
-        (10, "Table 10"),
-        (11, "Table 11"),
-        (12, "Table 12"),
-        (13, "Table 13"),
-        (14, "Table 14"),
+        (1, "Table 1 - 4 Guests"),
+        (2, "Table 2 - 2 Guests"),
+        (3, "Table 3 - 2 Guests"),
+        (4, "Table 4 - 4 Guests"),
+        (5, "Table 5 - 4 Guests"),
+        (6, "Table 6 - 8 Guests"),
+        (7, "Table 7 - 4 Guests"),
+        (8, "Table 8 - 4 Guests"),
+        (9, "Table 9 - 4 Guests"),
+        (10, "Table 10 - 4 Guests"),
+        (11, "Table 11 - 4 Guests"),
+        (12, "Table 12 - 6 Guests"),
+        (13, "Table 13 - 4 Guests"),
+        (14, "Table 14 - 6 Guests"),
     )
     booking_table = models.IntegerField(null=False, blank=False, choices=TABLE)
 
@@ -65,7 +61,7 @@ class Booking(models.Model):
     """
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
-    booking_date = models.ForeignKey(Date, on_delete=models.CASCADE)
+    date = models.DateField(null=False, blank=False, validators=[MinValueValidator(limit_value=date.today())],auto_now_add=True)
     time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
     end_time = models.TimeField(null=True, blank=True)  # End time calculated dynamically
     num_guest = models.IntegerField()
