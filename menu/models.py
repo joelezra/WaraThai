@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
-class MenuItem(models.Model):
+class Menu(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     item_image = CloudinaryField('image', default='placeholder')
@@ -19,7 +19,7 @@ class Comment(models.Model):
   and :model:`blog.Post`.
   """
   post = models.ForeignKey(
-    MenuItem, on_delete=models.CASCADE, related_name="comments"
+    Menu, on_delete=models.CASCADE, related_name="comments"
   )
   author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="comment_author"
