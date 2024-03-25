@@ -3,11 +3,11 @@
 
 {% block content %}
 
-<!-- index.html content starts here -->
+<!-- menus.html content starts here -->
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Menu Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for menu in menu_list %}
@@ -21,17 +21,22 @@
                               <img src="{{ menu.item_image.url }}" alt="{{ menu.name }}" class="card-img-top">
                               {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Price: {{ menu.price }}</p>
+                                    <p class="author">Price: £{{ menu.price }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'menu_detail' menu.pk %}" class="post-link">
-                                <h2 class="card-title">{{ menu.name }}</h2>
-                                <p class="card-text">{{ menu.description }}</p>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">Allergens: {{ menu.allergens}}
-                            </p>
+                            <div class="container">
+                                <div class="row menu-style">
+                                    <a href="{% url 'menu_detail' menu.pk %}" class="post-link">
+                                        <h2 class="card-title">{{ menu.name }}</h2>
+                                        <p class="card-text">{{ menu.description }}</p>
+                                    </a>
+        
+                                    <hr />
+                                    <p class="card-text text-muted h6">Allergens: {{ menu.allergens}}
+                                    </p>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

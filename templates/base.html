@@ -26,7 +26,7 @@
 <body>
     <nav class="navbar waragreen navbar-expand-lg" data-bs-theme="waragreen" id="nav">
         <div class="container-fluid">
-            <a class="navbar-brand white-text" href="{% url 'home' %}">WaraThai</a>
+            <a class="navbar-brand white-text" href="{% url 'home' %}"><img src="{% static 'images/WaraThai_Logo-removebg-preview2.png' %}" alt="logo" width="111"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -93,6 +93,27 @@
     <footer class="waragreen pt-4 pb-4" data-bs-theme="waragreen">
         <div class="container">
             <hr class="mx-auto footer-divider">
+            <div class="row">
+                <div class="d-none d-md-block col-md-6 col-xl-4 text-center">
+                    <img src="{% static 'images/WaraThai_Logo-removebg-preview2.png' %}" alt="logo" width="114">
+                </div>
+                <div class="d-none d-md-block col-md-6 col-xl-4 text-center">
+                    <ul>
+                        <li><strong>Phone Number :</strong></li>
+                        <li><a href="tel:01225 308 404">01225 308 404</a></li>
+                        <li><strong>E-mail Address :</strong></li>
+                        <li><a href="mailto:Info@warathai.co.uk">Info@warathai.co.uk</a></li>
+                    </ul>
+                </div>
+                <div class="d-none d-md-block col-md-6 col-xl-4 text-center">
+                    <ul>
+                        <li><strong>Our Address :</strong></li>
+                        <li>1 Granville Rd, Melksham SN12 8AN</li>
+                        <li><strong>Opening Times:</strong></li>
+                        <li>Every day, 11AM - 11PM</li>
+                    </ul>
+                </div>
+            </div>
             <div class="row">
                 <ul id="footer-icons" class="m-0 pt-1 pb-1 socials">
                     <li>
