@@ -7,14 +7,6 @@ from django.core.exceptions import ValidationError
 
 
 # Create your models here.
-# class TimeSlot(models.Model):
-    
-    
-
-# class Table(models.Model):
-    
-
-
 class Booking(models.Model):
     """
     Stores the data for a single instance of booking a table

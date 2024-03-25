@@ -19,7 +19,6 @@ from django.urls import path, include
 from home import views as index_views
 from menu import views as menu_views
 from booking import views as booking_views
-from user_profile import views as user_profile_views
 
 from django.urls import path, include
 from home.views import Home
@@ -27,8 +26,7 @@ from home.views import Home
 urlpatterns = [
     path('', Home.as_view(), name='home'),
     path('booking/', booking_views.booking, name='booking'),
-    path('menu/', menu_views.menu, name='menu'),
-    path('userprofile/', user_profile_views.user_profile, name='user-profile'),
+    path('menu/', include('menu.urls'), name='menu-urls'),
     path('accounts/', include("allauth.urls")),
     path('admin/', admin.site.urls),
 ]
