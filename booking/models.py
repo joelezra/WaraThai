@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import time, date
+from datetime import time, date, timedelta
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
@@ -83,16 +83,16 @@ def clean(self):
         14: 6,  # Capacity for Table 14
     }
     
-    if num_guest > table_capacity.get(self.table, 0):
+    if self.num_guest > table_capacity.get(self.table, 0):
         raise ValidationError("The table's capacity is insufficient for this booking.")
 
     # Calculate end time based on start time (time_slot) and duration (1.5 hours)
-    if self.time_slot:
+    if self.time:
         duration = timedelta(hours=1, minutes=30)
-        self.end_time = (self.time_slot + duration).strftime('%H:%M')
+        self.end_time = (self.time + duration).time()
 
     # Ensure the selected time slot and date are valid
-    existing_bookings = Booking.objects.filter(booking_date=self.booking_date, time_slot=self.time_slot)
+    existing_bookings = Booking.objects.filter(date=self.date, time=self.time)
     total_guest = sum(booking.num_guest for booking in existing_bookings)
     if total_guest + self.num_guest > table_capacity.get(self.table, 0):
         raise ValidationError("The selected time slot is unavailable.")

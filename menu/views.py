@@ -8,7 +8,7 @@ from .forms import CommentForm
 # Create your views here.
 class MenuList(generic.ListView):
   queryset = Menu.objects.all()
-  template_name = 'menu/menu.html'
+  template_name = 'menu/menus.html'
   paginate_by = 6
 
 
