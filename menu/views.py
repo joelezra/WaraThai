@@ -32,7 +32,7 @@ def menu_detail(request, pk):
   :template:`blog/post_detail.html`
   """
 
-  queryset = MenuItem.objects.all()
+  queryset = Menu.objects.all()
   item = get_object_or_404(queryset, pk=pk)
   comments = post.comments.all().order_by("-created_on")
   comment_count = post.comments.all().filter(approved=True).count()
@@ -75,7 +75,7 @@ def comment_edit(request, pk, comment_id):
     An instance of :form:`blog.CommentForm`.
   """
   if request.method == "POST":
-    queryset = MenuItem.objects.all()
+    queryset = Menu.objects.all()
     post = get_object_or_404(queryset, pk=pk)
     comment = get_object_or_404(Comment, pk=comment_id)
     comment_form = CommentForm(data=request.POST, instance=comment)
@@ -108,7 +108,7 @@ def comment_delete(request, pk, comment_id):
   ``comment``
     A single comment related to the post.
   """
-  queryset = MenuItem.objects.all()
+  queryset = Menu.objects.all()
   post = get_object_or_404(queryset, pk=pk)
   comment = get_object_or_404(Comment, pk=comment_id)
 
