@@ -14,28 +14,12 @@ class MenuList(generic.ListView):
 
 def menu_detail(request, pk):
   """
-  Display an individual :model:`blog.Post`.
-
-  **Context**
-
-  ``post``
-      An instance of :model:`blog.Post`.
-  ``comments``
-      All approved comments related to the post
-  ``comment_count``
-      A count of approved comments in the related post.
-  ``comment_form``
-      An instance of :form:`blog.CommentForm`.
-
-  **Template:**
-
-  :template:`blog/post_detail.html`
   """
 
   queryset = Menu.objects.all()
   item = get_object_or_404(queryset, pk=pk)
-  comments = post.comments.all().order_by("-created_on")
-  comment_count = post.comments.all().filter(approved=True).count()
+  comments = item.comments.all().order_by("-created_on")
+  comment_count = item.comments.all().filter(approved=True).count()
   comment_form = CommentForm()
 
   if request.method == "POST":
@@ -43,7 +27,7 @@ def menu_detail(request, pk):
     if comment_form.is_valid():
       comment = comment_form.save(commit=False)
       comment.author = request.user 
-      comment.post = post
+      comment.post = item
       comment.save()
       messages.add_message(
         request, messages.SUCCESS,
