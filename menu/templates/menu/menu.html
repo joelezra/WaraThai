@@ -10,27 +10,27 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for menuitem in menu_list %}
+                {% for menu_item in menu_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                              {% if "placeholder" in menuitem.item_image.url %}
+                              {% if "placeholder" in menu_item.item_image.url %}
                               <img src="{% static 'images/default.jpg' %}" alt="placeholder image" class="card-img-top">
                               {% else %}
-                              <img src="{{ menuitem.item_image.url }}" alt="{{ post.title }}" class="card-img-top">
+                              <img src="{{ menu_item.item_image.url }}" alt="{{ menu_item.name }}" class="card-img-top">
                               {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Price: {{ menuitem.price }}</p>
+                                    <p class="author">Price: {{ menu_item.price }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ menuitem.name }}</h2>
-                                <p class="card-text">{{ menuitem.description }}</p>
+                            <a href="{% url 'menu_detail' menu_item.pk %}" class="post-link">
+                                <h2 class="card-title">{{ menu_item.name }}</h2>
+                                <p class="card-text">{{ menu_item.description }}</p>
                             </a>
 
                             <hr />
-                            <p class="card-text text-muted h6">Allergens: {{ menuitem.allergens}}
+                            <p class="card-text text-muted h6">Allergens: {{ menu_item.allergens}}
                             </p>
                         </div>
                     </div>
