@@ -231,3 +231,38 @@ footer > div > a, footer > div > div > div > li > a {
     justify-content: end;
 }
 
+form {
+    padding-bottom: 5vh;
+}
+
+#hero {
+    height: 600px;
+    width: 100%;
+    background: url("../../static/images/hero_image1.jpeg") no-repeat center center/cover;
+    position: relative;
+}
+
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+#hero-title {
+    font-size: 260%;
+}
+
+div > button {
+    color: #E96B05;
+    background-color: #E96B05;
+    border-color: #E96B05;
+    width: 10vw;
+    height: 7vh;
+}
+
+button > a {
+    text-decoration: none;
+    color: white;
+}
