@@ -10,27 +10,27 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% for post in post_list %}
+                {% for menu in menu_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                              {% if "placeholder" in post.featured_image.url %}
+                              {% if "placeholder" in menuitem.item_image.url %}
                               <img src="{% static 'images/default.jpg' %}" alt="placeholder image" class="card-img-top">
                               {% else %}
-                              <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="card-img-top">
+                              <img src="{{ menuitem.item_image.url }}" alt="{{ post.title }}" class="card-img-top">
                               {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">Price: {{ menuitem.price }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                                <h2 class="card-title">{{ menuitem.name }}</h2>
+                                <p class="card-text">{{ menuitem.description }}</p>
                             </a>
 
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}}
+                            <p class="card-text text-muted h6">Allergens: {{ menuitem.allergens}}
                             </p>
                         </div>
                     </div>
@@ -61,5 +61,5 @@
 <!-- index.html content ends here -->
 {% endblock %}
 {% block copyright%}
-    Copyright 2024 Tariq Ebden
+    Copyright 2024 Joel Joe
 {% endblock copyright %}
