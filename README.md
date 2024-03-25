@@ -58,3 +58,9 @@ Trello was used for project management. User stories were created on the Miro bo
 
 
 ### Future Features and Modifications 
+
+## Acknowledment
+I have used ChatGPT, google, stackoverflow and django and python documentations for reference and brainstorming code. 
+I also adapted a lot from the django walkthrough project and previous hackathon project: UniVerse.
+I had a lot of help from Martin and Ronan who helped me with a lot of model errors which caused huge setbacks. 
+I was also away for 1.5 weeks so I only had half a week on this and the huge setbacks were hard.
