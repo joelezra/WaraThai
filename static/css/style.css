@@ -9,3 +9,29 @@
 .waragreen {
     background-color: #2F3A24;
 }
+
+.white-text {
+    color: white;
+    text-decoration: none; !important
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white;
+    text-decoration: underline;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 160%;
+}
+
+footer > div > div > ul {
+    list-style-type: none;
+}
+
+footer > div > a {
+    color: white;
+    text-decoration: none;
+}

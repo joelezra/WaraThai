@@ -26,7 +26,7 @@
 <body>
     <nav class="navbar waragreen navbar-expand-lg" data-bs-theme="waragreen" id="nav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">WaraThai</a>
+            <a class="navbar-brand white-text" href="{% url 'home' %}">WaraThai</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,29 +34,29 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
+                        <a class="nav-link white-text {% if request.path == home_url %}active{% endif %}"
+                            aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == menu_url %}active{% endif %}"
+                        <a class="nav-link white-text {% if request.path == menu_url %}active{% endif %}"
                             href="{% url 'menu' %}">Menu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == booking_url %}active{% endif %}"
+                        <a class="nav-link white-text {% if request.path == booking_url %}active{% endif %}"
                             href="{% url 'booking' %}">Bookings</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                        <a class="nav-link white-text {% if request.path == logout_url %}active{% endif %}"
                             href="{% url 'account_logout' %}">Sign Out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                        <a class="nav-link white-text {% if request.path == signup_url %}active{% endif %}"
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}"
+                        <a class="nav-link white-text {% if request.path == login_url %}active{% endif %}"
                             href="{% url 'account_login' %}">Sign In</a>
                     </li>
                     {% endif %}
@@ -79,28 +79,50 @@
         </div>
     </div>
 
-    <main>
+    <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">You are logged in as {{ user.username }}</p>
+        {% else %}
+        <p class="text-end m-3">You are not logged in</p>
+        {% endif %}
         {% block content %}
+        <!-- Content goes here -->
         {% endblock %}
     </main>
     <!-- Footer -->
     <footer class="waragreen pt-4 pb-4" data-bs-theme="waragreen">
-        <ul id="footer-icons" class="m-0 pt-1 pb-1">
-            <li>
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our Facebook page (opens in new tab)"><i class="fa-brands fa-facebook"></i></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener"
-                    aria-label="Visit our Instagram page (opens in new tab)"><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-                <a href="https://github.com/joelezra" target="_blank" rel="noopener"
-                    aria-label="Visit my GitHub page (opens in new tab)"><i class="fa-brands fa-github"></i></a>
-            </li>
-        </ul>
+        <div class="container">
+            <hr class="mx-auto footer-divider">
+            <div class="row">
+                <ul id="footer-icons" class="m-0 pt-1 pb-1 socials">
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                            aria-label="Visit our Facebook page (opens in new tab)"><i
+                                class="fa-brands fa-facebook white-text"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                            aria-label="Visit our Instagram page (opens in new tab)"><i
+                                class="fa-brands fa-instagram white-text"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener"
+                            aria-label="Visit our Tiktok page (opens in new tab)">
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                            aria-label="Visit our Instagram page (opens in new tab)">
+                            <i class="fa-brands fa-tiktok white-text"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/joelezra" target="_blank" rel="noopener"
+                            aria-label="Visit my GitHub page (opens in new tab)"><i
+                                class="fa-brands fa-github white-text"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <hr class="mx-auto footer-divider">
-        <div class="text-center pb-3">
+        <div class="text-center white-text">
             <a href="https://github.com/joelezra" target="_blank" rel="noopener">
                 <p>&copy; Joel Joe - 2024</p>
             </a>

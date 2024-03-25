@@ -7,15 +7,15 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Menu title goes in these h1 tags -->
-                <h1>{{ menu.name }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p>£{{ menu.price }} | Allergens: {{ menu.allergens }}</p>
+                <h1>{{ item.name }}</h1>
+                <!-- Price of Item | Allergen Information -->
+                <p>£{{ item.price }} | Allergens: {{ item.allergens }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                {% if "placeholder" in menu.item_image.url %}
+                {% if "placeholder" in item.item_image.url %}
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
                 {% else %}
-                <img src="{{ menu.item_image.url }}" alt="{{ menu.name }}" class="scale">
+                <img src="{{ item.item_image.url }}" alt="{{ item.name }}" class="scale">
                 {% endif %}
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <article class="card-text">
-                    {{ menu.description | safe }}
+                    {{ item.description | safe }}
                 </article>
             </div>
         </div>

@@ -17,7 +17,7 @@ class Menu(models.Model):
 class Comment(models.Model):
   """ 
   Stores a single comment entry related to :model:`auth.User`
-  and :model:`blog.Post`.
+  and :model:`menu.Menu`.
   """
   post = models.ForeignKey(
     Menu, on_delete=models.CASCADE, related_name="comments"
