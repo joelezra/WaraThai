@@ -1,39 +1,60 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# WaraThai
+![Logo](https://github.com/joelezra/WaraThai/blob/v2/static/images/WaraThai%20Logo.jpg)
 
-Welcome,
+Welcome to WaraThai, your friendly authetic Thai restaurant bringing you the flavours of Thailand to your tastebuds! 
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Introduction
+At WaraThai, we are passionate in introducing thai cuisine to the west with a western twist to accomadate your tastes! We are a friendly team going all out for your dining experience here with us!
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+## Overview
+External User's goal:
+The site users want to book a table so they can reserve seats before coming. They would also like to look at the menu to help decide if the food is for them.
+Site Owner's goal:
+To provide a platform for users to make a booking and as well look at the menu of food items available.
 
-## Codeanywhere Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+Miro Board was used for the ideation and brainstorming process. 
 
-`python3 -m http.server`
+Balsamiq was used for the wireframes. 
+![Home](https://github.com/joelezra/WaraThai/blob/v2/static/images/github1.png)
+Wireframe for 'Home' landing page showcasing hero image.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+![About](https://github.com/joelezra/WaraThai/blob/v2/static/images/github2.png)
+Wireframe for scrolling down the 'Home' page to see content such as the 'About Us'.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+![Contact](https://github.com/joelezra/WaraThai/blob/v2/static/images/github3.png)
+Wireframe for the 'Contact' page.
 
-`http_server`
+![Footer](https://github.com/joelezra/WaraThai/blob/v2/static/images/github4.png)
+Wireframe for the 'Footer'.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Menu](https://github.com/joelezra/WaraThai/blob/v2/static/images/github5.png)
+Wireframe for the 'Menu' page.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+![Booking](https://github.com/joelezra/WaraThai/blob/v2/static/images/github6.png)
+Wireframe for the user 'Booking' page.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Form](https://github.com/joelezra/WaraThai/blob/v2/static/images/github7.png)
+Wireframe for the 'Form' page.
 
-To log into the Heroku toolbelt CLI:
+Trello was used for project management. User stories were created on the Miro board and tasks were created based on it. The team then discussed the work they would be comfortable with and tasks were distributed and assigned based on each member's capability. Throughout the project, the Miro board was open for any additional ideas any member would have, then it would be reviewed as a team.
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Technology Used 
+1. HTML
+2. CSS
+3. Javascript
+4. Python
+5. Django
+6. Bootstrap
+7. ElephantSQL
+8. Balsamiq
+9. Miro
+10. Cloudinary
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Bugs and fixes
 
----
 
-Happy coding!
+### Entity Relationship Diagram
+
+
+### Future Features and Modifications 
