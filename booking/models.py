@@ -1,12 +1,45 @@
 from django.db import models
 from datetime import time, date
+from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from django.core.exceptions import ValidationError
 
 
 # Create your models here.
-class TimeSlot(models.Model):
+# class TimeSlot(models.Model):
+    
+    
+
+# class Table(models.Model):
+    
+
+
+class Booking(models.Model):
+    """
+    Stores the data for a single instance of booking a table
+    """
+    customer = models.ForeignKey(User, on_delete=models.CASCADE)
+    TABLE = (
+        (1, "Table 1 - 4 Guests"),
+        (2, "Table 2 - 2 Guests"),
+        (3, "Table 3 - 2 Guests"),
+        (4, "Table 4 - 4 Guests"),
+        (5, "Table 5 - 4 Guests"),
+        (6, "Table 6 - 8 Guests"),
+        (7, "Table 7 - 4 Guests"),
+        (8, "Table 8 - 4 Guests"),
+        (9, "Table 9 - 4 Guests"),
+        (10, "Table 10 - 4 Guests"),
+        (11, "Table 11 - 4 Guests"),
+        (12, "Table 12 - 6 Guests"),
+        (13, "Table 13 - 4 Guests"),
+        (14, "Table 14 - 6 Guests"),
+    )
+    table = models.IntegerField(null=False, blank=False, choices=TABLE)
+
+    # table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    date = models.DateField(null=False, blank=False, validators=[MinValueValidator(limit_value=date.today())])
     TIME_SLOTS = (
             (time(11, 0), "11:00 AM"),
             (time(11, 30), "11:30 AM"),
@@ -32,37 +65,8 @@ class TimeSlot(models.Model):
             (time(21, 30), "9:30 PM"),
             (time(22, 0), "10:00 PM"),
         )
-    booking_time = models.TimeField(null=False, blank=False, choices=TIME_SLOTS)
-    
-
-class Table(models.Model):
-    TABLE = (
-        (1, "Table 1 - 4 Guests"),
-        (2, "Table 2 - 2 Guests"),
-        (3, "Table 3 - 2 Guests"),
-        (4, "Table 4 - 4 Guests"),
-        (5, "Table 5 - 4 Guests"),
-        (6, "Table 6 - 8 Guests"),
-        (7, "Table 7 - 4 Guests"),
-        (8, "Table 8 - 4 Guests"),
-        (9, "Table 9 - 4 Guests"),
-        (10, "Table 10 - 4 Guests"),
-        (11, "Table 11 - 4 Guests"),
-        (12, "Table 12 - 6 Guests"),
-        (13, "Table 13 - 4 Guests"),
-        (14, "Table 14 - 6 Guests"),
-    )
-    booking_table = models.IntegerField(null=False, blank=False, choices=TABLE)
-
-
-class Booking(models.Model):
-    """
-    Stores the data for a single instance of booking a table
-    """
-    customer = models.ForeignKey(User, on_delete=models.CASCADE)
-    table = models.ForeignKey(Table, on_delete=models.CASCADE)
-    date = models.DateField(null=False, blank=False, validators=[MinValueValidator(limit_value=date.today())],auto_now_add=True)
-    time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
+    time = models.TimeField(null=True, blank=False, choices=TIME_SLOTS)
+    # time_slot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
     end_time = models.TimeField(null=True, blank=True)  # End time calculated dynamically
     num_guest = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
